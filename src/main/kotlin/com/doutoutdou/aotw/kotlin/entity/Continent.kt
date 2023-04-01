@@ -1,12 +1,14 @@
 package com.doutoutdou.aotw.kotlin.entity
 
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.Id
+import jakarta.persistence.*
 
 @Entity
 class Continent(
     var name: String,
-    @Id @GeneratedValue var id: Long? = null
+    @Id
+
+    @SequenceGenerator(name = "CONTINENT_SEQ", sequenceName = "CONTINENT_SEQ", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CONTINENT_SEQ")
+    var id: Long? = null
 
 )

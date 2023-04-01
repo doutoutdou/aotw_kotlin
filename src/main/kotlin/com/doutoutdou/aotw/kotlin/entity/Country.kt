@@ -1,11 +1,11 @@
 package com.doutoutdou.aotw.kotlin.entity
 
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.Id
+import jakarta.persistence.*
 
 @Entity
 class Country(
     var name: String,
-    @Id @GeneratedValue var id: Long? = null
+    @Id
+    @SequenceGenerator(name = "COUNTRY_SEQ", sequenceName = "COUNTRY_SEQ", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "COUNTRY_SEQ") var id: Long? = null
 )
