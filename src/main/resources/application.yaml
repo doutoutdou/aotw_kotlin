@@ -1,0 +1,21 @@
+spring:
+  liquibase:
+    enabled: true
+    change-log: 'classpath:db/changelog/db.changelog-master.xml'
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: 'jdbc:h2:file:./aotw_db'
+    username: aotw
+    password: pass
+  jpa:
+    # necessaire pour que l'insertion des donnees se fassent apres la creation des tables si utilisation d'hibernate
+    # defer-datasource-initialization: true
+    hibernate:
+      # necessaire pour que hibernate cree les tables meme si table pas en memoire
+      # ddl-auto: update
+  sql:
+    init:
+      # pour forcer le peuplement de la bdd meme si pas en memoire
+#      mode: always
