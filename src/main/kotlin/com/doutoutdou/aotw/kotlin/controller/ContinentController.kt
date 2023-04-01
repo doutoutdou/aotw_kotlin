@@ -18,12 +18,8 @@ class ContinentController(val service: ContinentService) {
     }
 
     @GetMapping("/{id}")
-    fun getContinent(@PathVariable id: String): ResponseEntity<ContinentDto> {
-//        val continent = continents[id]
-//        return if (continent != null) {
-//            ResponseEntity.ok(continent)
-//        } else {
-        return ResponseEntity.notFound().build()
-//        }
+    fun getContinent(@PathVariable id: Long): ResponseEntity<ContinentDto> {
+        val dto = service.getContinent(id)
+        return dto?.let {c -> ResponseEntity.ok(c)  } ?: ResponseEntity.notFound().build()
     }
 }
