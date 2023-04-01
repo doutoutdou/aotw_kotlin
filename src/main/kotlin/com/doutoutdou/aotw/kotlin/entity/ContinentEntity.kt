@@ -3,7 +3,8 @@ package com.doutoutdou.aotw.kotlin.entity
 import jakarta.persistence.*
 
 @Entity
-class Continent(
+@Table(name = "CONTINENT")
+class ContinentEntity(
     var name: String,
     @Id
 

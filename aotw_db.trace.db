@@ -5,3 +5,7 @@ SELECT COUNT(*) FROM PUBLIC.DATABASECHANGELOGLOCK [42104-214]
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "[*]CONTINENT"; attendu "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT"
 Syntax error in SQL statement "[*]CONTINENT"; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT"; SQL statement:
 CONTINENT [42001-214]
+2023-04-01 17:17:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CONTINENT_ENTITY" non trouvée
+Table "CONTINENT_ENTITY" not found; SQL statement:
+select c1_0.id,c1_0.name from continent_entity c1_0 [42102-214]
