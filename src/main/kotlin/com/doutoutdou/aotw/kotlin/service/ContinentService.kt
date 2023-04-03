@@ -16,4 +16,12 @@ class ContinentService(val repository: ContinentRepository, val mapper: Continen
         val continentDto = repository.findById(id).orElse(null)
         return continentDto?.let { continentEntity -> mapper.toDto(continentEntity) }
     }
+
+    fun createContinent(continentDto: ContinentDto): ContinentDto{
+       return repository.save(mapper.toEntity(continentDto)).let { continentEntity -> mapper.toDto(continentEntity)  }
+    }
+
+    fun deleteContinent(id: Long) {
+        return repository.deleteById(id)
+    }
 }
