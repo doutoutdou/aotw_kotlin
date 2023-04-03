@@ -5,6 +5,7 @@ import jakarta.persistence.*
 @Entity
 @Table(name = "COUNTRY")
 class CountryEntity(
+    @Column(unique = true, nullable = false)
     var name: String,
     @Id
     @SequenceGenerator(name = "COUNTRY_SEQ", sequenceName = "COUNTRY_SEQ", allocationSize = 1)
